@@ -4,22 +4,22 @@
 <!-- SECTION: head-meta -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="张俊鑫的个人主页：关于我、技能、作品与联系方式。">
-<title>个人主页 · 张俊鑫</title>
+<meta name="description" content="暨去的个人主页：关于我、技能、作品、游戏时光与联系方式。">
+<title>个人主页 · 暨去</title>
 <style>
 /* SECTION: theme-vars */
 :root{
-  --bg:#f7f8fc;
-  --bg-soft:#ffffff;
+  --bg:#e7effb;
+  --bg-soft:#f2f7fe;
   --bg-card:#ffffff;
   --text:#1c2333;
   --text-soft:#5a6478;
   --accent:#4f6df5;
-  --accent-soft:#e6ebff;
+  --accent-soft:#dbe7ff;
   --accent-2:#22b8a6;
-  --border:#e4e8f2;
-  --shadow:0 10px 30px rgba(28,35,51,.08);
-  --nav-bg:rgba(247,248,252,.86);
+  --border:#d4e0f2;
+  --shadow:0 10px 30px rgba(38,66,120,.10);
+  --nav-bg:rgba(231,239,251,.86);
   --radius:16px;
 }
 html[data-theme="dark"]{
@@ -183,6 +183,33 @@ html:not([data-theme="dark"]) .icon-moon{display:none;}
 .work-tags{display:flex;flex-wrap:wrap;gap:8px;}
 .tag{font-size:12.5px;color:var(--accent);background:var(--accent-soft);padding:3px 10px;border-radius:999px;}
 .work-link{font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:6px;min-height:44px;}
+/* SECTION: games */
+.games-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px;}
+.game-card{
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;min-width:0;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.game-card:hover{transform:translateY(-4px);}
+.cover-d{background:linear-gradient(135deg,#e5484d,#f7b733);}
+.cover-e{background:linear-gradient(135deg,#2f7cf6,#22d3ee);}
+.game-meta{display:grid;gap:8px;margin:2px 0;}
+.meta-row{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--text-soft);flex-wrap:wrap;}
+.meta-row b{color:var(--text);font-weight:600;}
+.games-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:16px;margin-top:24px;}
+.stat-card{
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:18px 12px;text-align:center;box-shadow:var(--shadow);
+}
+.stat-num{font-size:clamp(22px,3vw,28px);font-weight:800;color:var(--accent);line-height:1.2;}
+.stat-label{font-size:13px;color:var(--text-soft);margin-top:6px;}
+.games-banner{
+  margin-top:24px;background:var(--accent-soft);border:1px solid var(--border);border-radius:var(--radius);
+  padding:clamp(20px,3vw,32px);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+}
+.banner-text{flex:1 1 260px;min-width:0;}
+.banner-text h3{margin:0 0 6px;font-size:20px;}
+.banner-text p{margin:0;color:var(--text-soft);}
 /* SECTION: contact */
 .contact-card{
   background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
@@ -250,14 +277,15 @@ html:not([data-theme="dark"]) .icon-moon{display:none;}
 <header class="site-nav">
   <div class="container nav-inner">
     <a class="brand" href="#home">
-      <span class="brand-dot">张</span>
-      <span>张俊鑫</span>
+      <span class="brand-dot">暨</span>
+      <span>暨去</span>
     </a>
     <nav class="nav-links" id="navLinks" aria-label="主导航">
       <a href="#home" class="active">首页</a>
       <a href="#about">关于我</a>
       <a href="#skills">技能</a>
       <a href="#works">作品</a>
+      <a href="#games">游戏</a>
       <a href="#contact">联系</a>
     </nav>
     <div class="nav-actions">
@@ -280,12 +308,13 @@ html:not([data-theme="dark"]) .icon-moon{display:none;}
   <div class="container hero-inner">
     <div class="hero-text">
       <p class="hero-hi">你好，欢迎来到我的个人网站 👋</p>
-      <h1 class="hero-name">我是 <span class="grad">张俊鑫</span></h1>
-      <p class="hero-desc">一名热爱学习与创作的探索者。我相信把想法动手做出来，是最好的成长方式。这里记录我的技能、作品与思考。</p>
+      <h1 class="hero-name">我是 <span class="grad">暨去</span></h1>
+      <p class="hero-desc">一名热爱学习与创作的探索者，平时爱玩王者荣耀和地平线5。我相信把想法动手做出来，是最好的成长方式。这里记录我的技能、作品与热爱。</p>
       <div class="hero-chips">
         <span class="chip">网页设计</span>
         <span class="chip">前端学习</span>
-        <span class="chip">创意实践</span>
+        <span class="chip">王者荣耀</span>
+        <span class="chip">地平线5</span>
       </div>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#works">查看我的作品</a>
@@ -293,7 +322,7 @@ html:not([data-theme="dark"]) .icon-moon{display:none;}
       </div>
     </div>
     <div class="hero-avatar">
-      <div class="avatar-ring"><div class="avatar-core">张</div></div>
+      <div class="avatar-ring"><div class="avatar-core">暨</div></div>
     </div>
   </div>
 </section>
@@ -310,7 +339,8 @@ html:not([data-theme="dark"]) .icon-moon{display:none;}
       <div class="about-text reveal">
         <p>我目前专注于<strong>网页设计与前端技术</strong>的学习，喜欢把课堂里学到的知识变成真正能打开、能交互的作品。从一个按钮的动效到一整页的排版，我都愿意花时间打磨。</p>
         <p>学习之外，我喜欢记录与分享：把读过的书、做过的练习整理成清晰的笔记。我相信<strong>持续的小进步</strong>，比偶尔的大爆发更有力量。</p>
-        <p>这个网站是我的个人名片，也是成长记录。欢迎随时与我交流学习心得。</p>
+        <p>放松的方式是<strong>游戏</strong>：平时爱玩《王者荣耀》和《地平线5》。游戏里练出的配合与耐心，也悄悄用在了学习和做网页上。</p>
+        <p>这个网站是我的个人名片，也是成长记录。欢迎随时与我交流学习心得，或者约一局游戏。</p>
       </div>
       <div class="fact-card reveal">
         <ul class="fact-list">
@@ -328,7 +358,7 @@ html:not([data-theme="dark"]) .icon-moon{display:none;}
           </li>
           <li>
             <span class="fact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17l-6.1 3.6 1.4-6.8L2.2 9.1l6.9-.8z"/></svg></span>
-            <span>兴趣 · <b>设计 / 阅读 / 动手实践</b></span>
+            <span>兴趣 · <b>设计 / 阅读 / 游戏</b></span>
           </li>
         </ul>
       </div>
@@ -415,6 +445,46 @@ html:not([data-theme="dark"]) .icon-moon{display:none;}
   </div>
 </section>
 
+<!-- SECTION: games -->
+<section class="section-pad" id="games">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">GAMES</span>
+      <h2 class="section-title">游戏时光</h2>
+      <p class="section-sub">学习之外，我爱玩这两款游戏。</p>
+    </div>
+    <div class="games-grid">
+      <article class="game-card reveal">
+        <div class="work-cover cover-d">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 17.5L3 6V3h3l11.5 11.5"/><path d="M13 19l6-6"/><path d="M16 16l4 4"/><path d="M19 21l2-2"/></svg>
+        </div>
+        <div class="work-body">
+          <h3 class="work-title">王者荣耀</h3>
+          <p class="work-desc">5v5 团队竞技手游，闲暇时喜欢来几局。</p>
+          <div class="work-tags"><span class="tag">MOBA</span><span class="tag">团队竞技</span></div>
+        </div>
+      </article>
+      <article class="game-card reveal">
+        <div class="work-cover cover-e">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11"/><rect x="3" y="11" width="18" height="6" rx="2"/><circle cx="7.5" cy="17" r="1.5"/><circle cx="16.5" cy="17" r="1.5"/></svg>
+        </div>
+        <div class="work-body">
+          <h3 class="work-title">地平线5</h3>
+          <p class="work-desc">开放世界赛车游戏，喜欢开车漫游看风景。</p>
+          <div class="work-tags"><span class="tag">开放世界</span><span class="tag">赛车</span></div>
+        </div>
+      </article>
+    </div>
+    <div class="games-banner reveal">
+      <div class="banner-text">
+        <h3>想一起玩游戏？</h3>
+        <p>欢迎来找我组队。</p>
+      </div>
+      <a class="btn btn-primary" href="#contact">约一局 →</a>
+    </div>
+  </div>
+</section>
+
 <!-- SECTION: contact -->
 <section class="section-pad" id="contact" style="background:var(--bg-soft);">
   <div class="container">
@@ -430,7 +500,7 @@ html:not([data-theme="dark"]) .icon-moon{display:none;}
       </div>
       <div class="contact-actions">
         <div class="email-row">
-          <span class="email-addr" id="emailAddr">zhangjunxin@example.com</span>
+          <span class="email-addr" id="emailAddr">jiqu@example.com</span>
           <button class="copy-btn" id="copyEmail" type="button">复制</button>
         </div>
         <div class="contact-meta">
@@ -446,7 +516,7 @@ html:not([data-theme="dark"]) .icon-moon{display:none;}
 <!-- SECTION: footer -->
 <footer class="site-footer">
   <div class="container footer-inner">
-    <span>© <span id="yearNow">2026</span> 张俊鑫 · 用心记录每一步</span>
+    <span>© <span id="yearNow">2026</span> 暨去 · 用心记录每一步</span>
     <span>本站为单文件个人主页示例</span>
   </div>
 </footer>
